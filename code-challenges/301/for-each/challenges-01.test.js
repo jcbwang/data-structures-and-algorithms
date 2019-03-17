@@ -1,5 +1,7 @@
 'use strict';
 
+import { create } from "domain";
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
@@ -69,6 +71,8 @@ const removeElements = (arr, callback) => {
   return arr;
 };
 
+
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -118,10 +122,19 @@ The inventory is formatted like this:
 
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
+const inventory=[];
+const list=[];
+
+inventory.forEach((item) =>{
+  if(item.available === true){
+    createList(item);
+  }
+});
 
 const createList = (availableItems) => {
-  // Solution code here...
-}
+  list.push(availableItems);
+  return list;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -138,7 +151,11 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  // arr.forEach(num => {
+  //   if(num % 5 === 0 && num % 3 === 0){
+
+  //   }
+  // });
 }
 
 /* ------------------------------------------------------------------------------------------------

@@ -1,5 +1,7 @@
 'use strict';
 
+import { formatResultsErrors } from "jest-message-util";
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
@@ -42,7 +44,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+ let regex = /^[A-J]/;
+ const result = [];
+ arr.forEach(city =>{
+   if(regex.test(city)){
+     result.push(city);
+   }
+ })
+ return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,9 +67,9 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  let regex = /(oct)/gi;
+  const regex = /^[Oo]ct(ober)?$)/;
   
-  return(regex.test(input));
+  return regex.test(input);
   
 };
 
