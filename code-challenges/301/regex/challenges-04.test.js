@@ -42,14 +42,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
- let regex = /^[A-J]/;
- const result = [];
- arr.forEach(city =>{
-   if(regex.test(city)){
-     result.push(city);
-   }
- })
- return result;
+  let regex = /^[A-J]/;
+  const result = [];
+  arr.forEach(city =>{
+    if(regex.test(city)){
+      result.push(city);
+    }
+  })
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,11 +65,12 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  const regex = /^[Oo]ct(ober)?$)/;
+  const regex = /^[Oo]ct(ober)?$/;
   
-  return regex.test(input);
+  return(regex.test(input));
   
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -82,8 +83,10 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
+  let regex = /[A-Za-z]+\s/g;
+  return (str.match(regex));
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -98,8 +101,11 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  // Solution code here...
+  let regex = /(a|e|i|o|u)/g;
+  str.match(regex);
+  return(str.replace(regex,'_'));
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
