@@ -1,6 +1,7 @@
 'use strict';
 
 import { stringTypeAnnotation } from "@babel/types";
+import { formatResultsErrors } from "jest-message-util";
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
@@ -16,11 +17,12 @@ For example, if the input is 'Welcome', the output will be:
 ------------------------------------------------------------------------------------------------ */
 
 const howMuchPencil = (str) => {
-  let result = [];
-    for(let i =str.length; i > 0;i--){
-      let string = str.slice(0,str[i]);
-      result.push(string);
-    }
+  const result = [];
+  for(let i = 0; i < str.length;i++){
+    let string = str.slice(i,str.length);
+    result.push(string);
+  }
+  result.push("");
   return result;
 };
 
@@ -114,7 +116,10 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.steps.forEach(item =>{
+    var food = item.split(" ");
+    result.push(food[0]);
+  })
   return result;
 };
 
@@ -132,7 +137,8 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  let result = arr.filter(number => number%2);
+  return(result);
 };
 
 /* ------------------------------------------------------------------------------------------------
