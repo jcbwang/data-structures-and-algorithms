@@ -1,8 +1,5 @@
 'use strict';
 
-import { stringTypeAnnotation } from "@babel/types";
-import { formatResultsErrors } from "jest-message-util";
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
@@ -117,7 +114,7 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 const stepActions = (recipe) => {
   let result = [];
   recipe.steps.forEach(item =>{
-    var food = item.split(" ");
+    var food = item.split(' ');
     result.push(food[0]);
   })
   return result;

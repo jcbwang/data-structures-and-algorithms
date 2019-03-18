@@ -1,7 +1,5 @@
 'use strict';
 
-import { formatResultsErrors } from "jest-message-util";
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
