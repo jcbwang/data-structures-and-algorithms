@@ -26,14 +26,10 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
- let regex = /\s+[A-Z]/g;
- return str.split(regex);
-
-// let words = [];
-// words.str.split(/\\s+/);
-//  let regex = /\b[A-Z]+\b/gi;
-//  return (str.split(regex));
+  let regex = /[A-Z][a-z]+/g;
+  return str.match(regex);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
