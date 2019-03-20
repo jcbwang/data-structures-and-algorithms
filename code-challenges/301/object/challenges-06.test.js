@@ -79,7 +79,7 @@ Write a function named getHouses that returns a new array containing the names o
 
 const getHouses = (arr) => {
   let houses = [];
-  arr.forEach(item=>{
+  arr.forEach(item => {
     houses.push(item.house);
   })
   return houses;
@@ -110,7 +110,15 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
+  let children = 0;
+  Object.entries(arr).forEach(item => {
+    item.forEach(person =>{
+      if(person.name === character){
+        children = person.children.length > 0 ? true: false;
+      }
+    })
+  })
+  return children;
 };
 
 /* ------------------------------------------------------------------------------------------------
