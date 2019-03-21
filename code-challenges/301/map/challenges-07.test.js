@@ -54,6 +54,7 @@ Read the MDN documentation on String.charCodeAt() if necessary.
 
 For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
+//return arr.map(num => num.charCodeAt());
 
 const charCode = (arr) => {
   let array = arr.map(item => {
@@ -71,6 +72,11 @@ If any element in the array is not a number, the resulting array should have the
 
 For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
+// if(typeof num !== 'number'){
+//   return 'N/A';
+// }
+// return num % 2 === 0? 'even' : 'odd';
+// }
 
 const evenOdd = (arr) => {
   let result = arr.map(item =>{
@@ -124,7 +130,7 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  return arr.map(item => item.ability.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -171,7 +177,8 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
+  let total = 
+
 };
 
 /* ------------------------------------------------------------------------------------------------

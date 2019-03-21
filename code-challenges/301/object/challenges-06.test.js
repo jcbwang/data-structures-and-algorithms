@@ -97,8 +97,27 @@ hasChildrenValues(characters, 'Sansa') will return true
 hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
+// const result = [];
+// Object.values(characters).forEach(item => {
+//   if (item.children.length > 1){
+//     result.push(true);
+//   } else{
+//     result.push(false);
+//   }
+// })
+
+// console.log(result);
+
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  const result = [];
+  Object.values(arr).forEach(item => {
+    if (item.children[character].length > 1){
+      result.push(true);
+    }else{
+      result.push(false);
+    }
+    return result;
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
