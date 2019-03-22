@@ -154,6 +154,7 @@ const getCharactersWithoutChildren = (arr) => {
   return arr;
 };
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 

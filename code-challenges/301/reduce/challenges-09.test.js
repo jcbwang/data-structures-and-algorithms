@@ -9,7 +9,12 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  // Solution code here...
+  const count = arr.reduce((accumulator, value, idx) =>{
+    accumulator+value[idx];
+    accumulator++
+    return accumulator;
+  },0);
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,7 +74,12 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  const new_array = [];
+  arr.reduce((accumulator,value) => {
+    new_array.push(value.name);
+    return accumulator ++;
+  })
+  return new_array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,10 +91,14 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (arr) => {
-  // Solution code here...
+  let splitted_array = arr.split('');
+  let reverse = splitted_array.reduce((accumulator,value) => {
+    return value + accumulator;
+  });
+  return reverse;
 };
 
-/* ------------------------------------------------------------------------------------------------
+/* ------------------------------       ------------------------------------------------------------------
 CHALLENGE 4
 
 Write a function named countNumberOfChildren that, given the array of characters, below, uses reduce to return the total number of children in the data set.
@@ -134,7 +148,12 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  const count = arr.reduce((accumulator, value, idx) =>{
+    accumulator+value[idx];
+    accumulator++
+    return accumulator;
+  },0);
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
