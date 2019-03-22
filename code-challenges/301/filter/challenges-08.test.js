@@ -24,7 +24,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  let regex = /(a|e|i|o|u)/;
+  let regex = /[aeiou]/;
   return arr.filter(item => item.match(regex));
 };
 
@@ -91,7 +91,6 @@ Write a function named getStatName that is an extension of your getBaseStatGreat
 
 For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 'special-attack'].
 ------------------------------------------------------------------------------------------------ */
-
 const getStatName = (arr, minBaseStat) => {
   const array = arr.filter(object => {
     if (object.baseStat > minBaseStat) return object;
@@ -149,10 +148,10 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  arr.filter(object => {
-    let children = Object.keys(arr[object]);
-    if (!children.includes('children')) return object.name;
+  arr.filter(item => {
+    if(!item.children) return(item.name);
   })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -164,10 +163,13 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
+  let noStrings = arr.filter(item =>{
+    return !(typeof item === 'string')
+  })
+  return noStrings.map(i => i%2 === 0 ? 'evens' : 'odds');
 };
 
-/* ------------------------------------------------------------------------------------------------
+/* ß------------------------------------------------------------------------------------------------
 TESTS
 
 All the code below will verify that your functions are working to solve the challenges.
