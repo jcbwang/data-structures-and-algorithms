@@ -74,12 +74,10 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  const new_array = [];
-  arr.reduce((accumulator,value) => {
-    new_array.push(value.name);
-    return accumulator ++;
-  })
-  return new_array;
+  return arr.reduce((accumulator,value) => {
+    accumulator.push(value.name);
+    return accumulator;
+  },[]);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -147,13 +145,18 @@ const characters = [
   },
 ];
 
+// return arr.reduce((accumulator, current)=>{
+//   return current.children ? accumulator + current.children.length: accumulator;
+// },0);
+
 const countNumberOfChildren = (arr) => {
-  const count = arr.reduce((accumulator, value, idx) =>{
-    accumulator+value[idx];
-    accumulator++
-    return accumulator;
+  return arr.reduce((accumulator, value) => {
+    if (value.children){
+      return accumulator + value.children.length;
+    } else{
+      return accumulator;
+    }
   },0);
-  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -165,7 +168,7 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  return arr.reduce((accumulator, item) => accumulator + item, 0)/arr.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -186,7 +189,7 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  return arr.reduce((accumulator, item) => isPrime(item) ? accumulator + 1 : accumulator, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -229,7 +232,11 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+  return arr.reduce((accumulator,item)=>{
+    if (item.stat.name.includes(statName)){
+      return accumulator + item
+    } return accumulator;
+  },{})
 };
 
 /* ------------------------------------------------------------------------------------------------
