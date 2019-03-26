@@ -15,14 +15,14 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 let counter = 0;
 
 const count = (target, input) => {
-  input.map(number => {
+  return input.map(number => {
     number.map(item => {
       if(item === target){
         counter++;
       }
     })
+    return counter;
   })
-  return counter;
 };
 
 
