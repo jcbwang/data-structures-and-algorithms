@@ -15,14 +15,14 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 let counter = 0;
 
 const count = (target, input) => {
-  input.map(number => {
+  return input.map(number => {
     number.map(item => {
       if(item === target){
         counter++;
       }
     })
+    return counter;
   })
-  return counter;
 };
 
 
@@ -123,14 +123,9 @@ let starWarsData = [{
 }];
 
 
-const array = [];
+
 let findMaleAndFemale = (data) => {
-  data.map(object =>{
-    if (object.gender === 'female' || object.gender === 'male'){
-      array.push(object.name);
-    }
-  })
-  return array.join(' and ');
+  return data.filter(object => object.gender === 'male' || object.gender === 'female').map(object => object.name).join(' and ');
 };
 
 
