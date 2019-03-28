@@ -60,6 +60,7 @@ const salesData = (hours, data) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
+
 Write a function named howManyTreats that will return the quantity of treats you need to pick up from the pet store today from this array.
 ------------------------------------------------------------------------------------------------ */
 
