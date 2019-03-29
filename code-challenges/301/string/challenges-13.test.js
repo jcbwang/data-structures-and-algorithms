@@ -48,7 +48,7 @@ const onlyOddChars = (str) => {
   let newArray = str.split('');
   newArray.filter((char,idx)=> {
     if(!idx % 2 ===1){
-      return char;
+      return char.join('');
     }})
 };
 
