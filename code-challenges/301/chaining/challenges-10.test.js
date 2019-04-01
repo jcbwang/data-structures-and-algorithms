@@ -12,17 +12,14 @@ Note: You might need to use the same method more than once.
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
-let counter = 0;
-
 const count = (target, input) => {
-  return input.map(number => {
-    number.map(item => {
-      if(item === target){
-        counter++;
-      }
+  let counter = 0;
+  input.forEach(array=>{
+    return array.forEach(number=>{
+      if(number === target) counter++;
     })
-    return counter;
   })
+  return counter;
 };
 
 
@@ -37,12 +34,13 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  return input.map(array => {
-    array.reduce((acc, num) => {
-      return acc+num;
-    },0)
-  })
-};
+  return input.reduce((acc,array)=>{
+    array.forEach(num => {
+      acc = acc+num;
+    })
+    return acc;
+  },0);
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -57,8 +55,11 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
-};
+  return input.map(array => {
+    const new_array = array.filter(number => Number.isInteger(number) && number % 5 === 0)
+    return new_array.map(item=>Math.pow(2,item))
+  });
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -136,7 +137,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  data.reduce((acc,object) => {
+  return data.reduce((acc,object) => {
     if (object.name.length < acc){
       acc === object.name.length;
       console.log(object.name);
