@@ -176,10 +176,10 @@ const snorlaxStats = {
   weight: 4600,
 };
 
-const extractStats = (arr) => {
-  let total = 
+// const extractStats = (arr) => {
+//   let total = 
 
-};
+// };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
